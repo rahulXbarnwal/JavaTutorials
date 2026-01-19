@@ -89,8 +89,41 @@ package multithreading;
 
 5. When a Java program starts, one thread begins running immediately, which is called main thread.
    This thread is responsible for executing the main method of a program.
+
+6. To create a new thread in Java, you can either
+   - extend the Thread class
+              OR
+   - implement the Runnable interface
+ */
+
+/*
+1. By extending the Thread class:
+    - A new class World is created that extends Thread
+    - The run method is overridden to define the code that constitutes the new thread.
+    - start method is called to initiate the new thread
+
+2. By implementing Runnable Interface
+    - A new class World2 is created that implements Runnable
+    - The run method is overridden to define the code that constitutes the new thread.
+    - A Thread object is created by passing an instance of World2
+    - start method is called on the Thread object to initiate the new thread.
+
+In both cases, the run method contains the code that will be executed in the new thread
  */
 
 
 public class LearnMultithreading {
+    public static void main(String[] args) {
+
+//        World world = new World();
+//        world.start();
+
+        World2 world2 = new World2();
+        Thread t1 = new Thread(world2);
+        t1.start();
+
+        for(; ;) {
+            System.out.println("Hello");
+        }
+    }
 }
