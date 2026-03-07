@@ -5,7 +5,9 @@ public class LearnMath {
         System.out.println(getRandom(10, 20));
     }
 
-    public static int getRandom(int a, int b) {
-        return (int) (Math.random() * (b - a + 1) + a);
+    public static int getRandom(int l, int r) {
+        return l + (int)(Math.random() * (r - l + 1));
     }
 }
+
+// Math.random() ->  0.0 ≤ value < 1.0
