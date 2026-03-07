@@ -25,6 +25,7 @@ public class Vehicle {
 //    }
 
 //    valid constructor
+//    by default access modifier of a constructor is package-private (also called default access)
 //    Vehicle() {
 //        System.out.println("This is constructor");
 //    }
