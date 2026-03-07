@@ -1,6 +1,9 @@
 package oops2;
 
 // properties and behavior both will get inherited on extending
+
+// When a class extends another class, it inherits all non-private fields and methods of the parent class, but constructors and private members are not inherited.
+// Static methods are not truly inherited, they are hidden.
 public class Car extends Vehicle {
 
     String color;
