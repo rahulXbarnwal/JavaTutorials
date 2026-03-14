@@ -3,7 +3,7 @@ package learnCollections;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-// string literals inside string pool are strong referenced
+// string literals inside string pool are strong referenced throughout the life-cycle of program
 
 public class WeakHashMapDemo {
     public static void main(String[] args) {
