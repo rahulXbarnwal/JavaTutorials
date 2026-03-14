@@ -65,9 +65,57 @@ When we call get(key), the HashMap follows these steps:
     - Once the correct bucket is found, it checks for the key in that bucket. If it finds the key, it returns the associated value
  */
 
+
+/*
++-----+-----+-----+-----+-----+
+|  0  |  1  |  2  |  3  |  4  |
++-----+-----+-----+-----+-----+
+                    |
+                    v
+               +-----------+
+               | (k1, v1)  |
+               +-----------+
+                    |
+                    v
+               +-----------+
+               | (k2, v2)  |
+               +-----------+
+                    |
+                    v
+                  null
+
+
+class Node<K, V> {
+    final int hash;   // hash code of the key
+    final K key;      // the key itself
+    V value;          // the value associated with the key
+    Node<K, V> next;  // pointer to the next node in case of a collision (linked list)
+}
+
+
+This searching in linked list is O(n) time complexity in worst case (when all keys hash to the same bucket). 
+To mitigate this, Java 8 introduced a Balanced BST (Red-Black Tree - Self balancing BST) -> O(log n).
+TREEIFY_THRESHOLD = 8 (when a bucket has more than 8 entries, it converts the linked list to a tree for better performance)
+ */
+
+
+/*
+HashMap Resizing (Rehashing):
+
+- HashMap has an internal array size, which by default is 16.
+  When the no. of elements (key-value pairs) exceeds a certain threshold (load factor, default is 0.75), the HashMap automatically resizes the array to hold more data. This process is called rehashing.
+
+- The default size of the array is 16, so when more than 12 elements (16 * 0.75) are inserted, the HashMap will resize.
+
+During Rehashing:
+- The array size is doubled.
+  1. All existing entries are rehashed (i.e. their positions are recalculated) and placed into the new array
+  2. This ensures the HashMap continues to perform efficiently even as more data is added
+ */
+
 public class HashMapDemo {
     public static void main(String[] args) {
-        HashMap<Integer, String> map = new HashMap<>();
+        HashMap<Integer, String> map = new HashMap<>(17, 0.5f); // initial capacity = 17, load factor = 0.5
         map.put(3, "Prateek");
         map.put(1, "Rahul");
         map.put(2, "Mayank");
