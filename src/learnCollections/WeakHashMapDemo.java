@@ -3,6 +3,8 @@ package learnCollections;
 import java.util.Map;
 import java.util.WeakHashMap;
 
+// string literals inside string pool are strong referenced
+
 public class WeakHashMapDemo {
     public static void main(String[] args) {
         WeakHashMap<String, Image> imageCache = new WeakHashMap<>();
