@@ -4,7 +4,9 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 /*
-SortedMap is an Interface that extends Map and guarantees that the entries are sorted based on the keys, either in their natural ordering or by a specified Comparator. 
+SortedMap is an Interface that extends Map and guarantees that the entries are sorted based on the keys, either in their natural ordering or by a specified Comparator.
+
+HashMap uses an array of buckets with linked lists / trees, while TreeMap is implemented as a self-balancing Red-Black Tree without any bucket array
  */
 
 public class SortedMapDemo {
