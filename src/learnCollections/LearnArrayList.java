@@ -121,6 +121,8 @@ public class LearnArrayList {
         Collections.sort(list7); // sorts the list in natural order
         list7.sort(null); // sorts the list in natural order, same as Collections.sort(list7)
 
+        Collections.reverse(list7); // reverse the list
+
 
         Object[] array1 = list7.toArray();
         Integer[] array2 = list7.toArray(new Integer[0]);
